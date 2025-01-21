@@ -1,0 +1,783 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  list-style: none;
+  font-family: "Poppins", Sans-Serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #29353c;
+  --bg-variant: #44576d;
+  --primary-variant: #768a96;
+  --primary: #aac7d8;
+  --color: #dfebf6;
+  --color-variant: #fafafa;
+  --black: #0e0e0e;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navigation {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 10px;
+  position: relative;
+  z-index: 2;
+  background: var(--primary);
+  box-shadow: 0 0 7px 5px rgba(50, 50, 50, 0.1);
+}
+
+.navInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navTitle h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.navTitle p {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.logo {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.menuBtn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: var(--color-variant);
+}
+
+.devCon {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.devCon a p {
+  width: 100%;
+  text-align: center;
+  padding: 0.4rem 0;
+  border-radius: 5px;
+  box-shadow:
+    0 0 3px var(--primary),
+    0 0 5px rgba(100, 100, 100, 0.25);
+  transition: 0.65s;
+}
+
+.devCon a p:hover {
+  background: var(--primary);
+  box-shadow:
+    0 0 3px var(--primary),
+    0 0 2px rgba(100, 100, 100, 0.25);
+}
+
+.toggleMenu {
+  width: 100%;
+  height: 0;
+  background: var(--color);
+  box-shadow: 0 0 7px 5px rgba(50, 50, 50, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: 0.7s;
+}
+
+.toggle {
+  height: 310px;
+  box-shadow: 0 0 3px 2px rgba(50, 50, 50, 0.1);
+}
+
+.socials {
+  width: 100%;
+  text-align: center;
+  padding: 0.2rem 0 0;
+}
+
+.socials p {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.socialBtns i {
+  font-size: 1.4rem;
+  margin: 0 2px;
+}
+
+.sideBarContainer {
+  display: none;
+}
+
+.popUpTextMeme {
+  position: absolute;
+  z-index: 100;
+  color: red;
+  font-size: 18px;
+  animation: fadeMove 3s linear infinite;
+}
+
+@keyframes fadeMove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 5.5rem 1rem 2rem;
+  position: relative;
+}
+
+.addSchedCont {
+  padding: 2rem 1rem 2rem;
+}
+
+.container .systemTitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.container h3 {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 0;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 5px;
+  background: var(--color);
+}
+
+.container .schedLabel,
+.container .h3LabelName {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.deleteBtn {
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  border: 0;
+  background: transparent;
+}
+
+.container .addScheduleLabel {
+  font-size: 15px;
+  font-weight: 400;
+  color: gray;
+  border: 1.5px dashed var(--primary);
+  background: var(--color-variant);
+}
+
+.addScheduleInputContainer {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.1);
+}
+
+.addScheduleInput {
+  width: 18rem;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fafafa;
+}
+
+.addScheduleInput p {
+  font-size: 20px;
+}
+
+.addScheduleInput input {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.addScheduleBtns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addScheduleBtns button {
+  width: 60px;
+  padding: 7px;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+}
+
+.addScheduleBtns .cancelBtn {
+  color: #fff;
+  background: red;
+}
+
+.addScheduleBtns .addBtn {
+  color: #fff;
+  background: green;
+}
+
+.scheduleContainer {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background: var(--color-variant);
+  overflow-x: auto;
+}
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem 0 0;
+  margin-top: 50px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table tr:nth-child(even) {
+  background: rgba(200, 200, 200, 0.15);
+}
+
+.table tr {
+  display: grid;
+  gap: 5px;
+  grid-template-columns:
+    minmax(9rem, 1fr) minmax(7.8rem, 1fr) minmax(5.5rem, 1fr)
+    minmax(5.5rem, 0.75fr) minmax(7.5rem, 1fr) minmax(5.5rem, 0.75fr);
+  padding: 0.2rem 0 0.5rem;
+}
+
+.table .tableHead {
+  padding: 0 0 5px;
+}
+
+.table td {
+  font-family: Sans-Serif;
+  text-align: center;
+  align-self: center;
+  padding: 0 8px;
+}
+
+.table th {
+  font-weight: 500;
+  padding: 0.3rem;
+  border-radius: 3px;
+  background: var(--primary);
+}
+
+.actionsContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.actions button {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 2.5px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.actions .editAction {
+  background: lightgreen;
+}
+
+.actions .deleteAction {
+  background: #ff7c7c;
+}
+
+/* addSubjectContainer styles */
+.addSubjectContainer {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background: var(--color-variant);
+  overflow-x: auto;
+}
+
+.addSubjectInputs input {
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  margin: 0.27rem 0;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.1);
+}
+
+label {
+  font-size: 0.9rem;
+  padding: 3px 2px 2px;
+}
+
+.instructor,
+.room,
+.editRoom {
+  width: 100%;
+  color: gray;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  margin: 0.27rem 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.1);
+}
+
+.selectDay {
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  margin: 0.27rem 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.1);
+}
+
+.selectDay summary {
+  width: 100%;
+  font-size: 0.8rem;
+  color: gray;
+  position: relative;
+}
+
+/* .selectDay summary:after{
+  content: '⟩';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(90deg);
+  transition: 1s;
+}
+ */
+.selectDay .days {
+  padding: 5px 0 0;
+}
+
+.selectDay label {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.selectDay label input {
+  width: auto;
+  background: var(--color);
+}
+
+.addSubjectContainer button {
+  width: 40%;
+  min-width: 5rem;
+  margin: 0.8rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.addButton {
+  border: 0;
+  background: rgba(0, 200, 0, 0.5);
+  transition: 0.7s;
+}
+
+.saveButton {
+  color: #000;
+  border: 0;
+  transition: 0.7s;
+  background: var(--primary);
+}
+
+.addSubjectContainer .btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeSlot {
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(2.2rem, 1fr)
+    max-content
+    minmax(2.2rem, 1fr)
+    max-content
+    minmax(2.2rem, 1fr)
+    max-content
+    minmax(2.2rem, 1fr)
+    minmax(2.2rem, 1fr);
+  place-items: center;
+}
+
+.timeSlot span {
+  padding: 0.5rem;
+}
+
+.timeSlot input {
+  border: 0;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}
+
+.timeSlot select {
+  height: 2.2rem;
+  color: gray;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.1);
+}
+
+/* edit subject form */
+.editSubjectContainer {
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: 8rem 0 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.1);
+  overflow: scroll;
+}
+
+.editSubjectForm {
+  width: 90%;
+  padding: 0.5rem 1rem 1rem 1rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background: var(--color-variant);
+  overflow-x: auto;
+}
+
+.editSubjectForm .btns {
+  width: 100%;
+  padding: 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editSubjectForm button {
+  width: 60px;
+  padding: 7px;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+}
+
+.editSubjectForm .saveEditBtn {
+  background: lightgreen;
+}
+
+.editSubjectForm .cancelEditBtn {
+  background: #ff7c7c;
+}
+
+/* popupBox styles */
+.popupBoxContainer,
+.popupBoxContainer2 {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.1);
+}
+.popupBox,
+.popupBox2 {
+  width: 18rem;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fafafa;
+}
+
+.btnss {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnss .deleteLabel {
+  color: #fff;
+  background: red;
+}
+
+.btnss .cancelDel {
+  color: #fff;
+  background: green;
+}
+
+.popupBoxInfo,
+.popupBoxInfo2 {
+  margin: 0.5rem 0 1rem;
+}
+
+.popupButton,
+.popupButton2 {
+  border: 0;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  background: var(--primary);
+}
+
+/* Config Subjects */
+.subjects {
+  width: 100%;
+  padding: 0.8rem 0.8rem 1.5rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background: var(--color-variant);
+  overflow-x: auto;
+}
+
+.subjects h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0.25rem;
+  background: var(--primary);
+}
+
+.subjects .subjectsData {
+  min-height: 3rem;
+  max-height: 21.5rem;
+  margin: 5px 0;
+  display: grid;
+  gap: 5px;
+  overflow: auto;
+}
+
+.subjects .subjectsData div {
+  padding: 5px 7px 5px 5px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 5px;
+}
+
+.subjects .subjectsData p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.subjects .subjectsData i {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 2.5px;
+  background: #ff7c7c;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.subjects .subjectsData div:nth-child(even) {
+  background: rgba(200, 200, 200, 0.15);
+}
+
+.subjects .addDataBtnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0.3rem 10px 0;
+}
+
+.subjects .addDataBtnContainer button {
+  width: max-content;
+  min-width: 5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: 0;
+  background: lightgreen;
+  box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.3);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    padding: 0 6%;
+  }
+  .editSubjectForm {
+    width: 85%;
+  }
+  .selectDay .days {
+    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "head head head"
+      "side main main";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+  }
+
+  .navigation {
+    grid-area: head;
+    position: static;
+  }
+
+  .sideBarContainer {
+    width: 15rem;
+    grid-area: side;
+    padding: 0.5rem 0 0;
+    display: block;
+    background: var(--color);
+    box-shadow: 0 0 7px 5px rgba(50, 50, 50, 0.1);
+  }
+
+  .sideBarLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .sideBarLinks p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.5rem;
+    transition: 0.55s;
+  }
+
+  .sideBarLinks p:hover {
+    background: var(--primary);
+  }
+
+  .active {
+    background: var(--primary);
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    grid-area: main;
+    padding: 2rem 3rem;
+    overflow: auto;
+    position: relative;
+  }
+
+  .addSchedCont .title {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .editSubjectForm {
+    width: 80%;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .navInfo {
+    padding: 0 5px;
+    gap: 10px;
+  }
+}

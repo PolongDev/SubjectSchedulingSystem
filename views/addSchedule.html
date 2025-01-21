@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/icons/fontawesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="/icons/fontawesome/css/solid.css" />
+    <link rel="stylesheet" href="/icons/fontawesome/css/brands.css" />
+    <style>
+      body {
+        padding: 0;
+        background: var(--color);
+      }
+    </style>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Subject Scheduling System</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="navBar">
+        <div class="navInfo">
+          <div class="logo">
+            <img src="/image/logo.jpg" />
+          </div>
+          <div class="navTitle">
+            <h3>CodeBuddy Solutions</h3>
+            <p>Turn your ideas into reality</p>
+          </div>
+        </div>
+        <div class="menuBtn">
+          <i class="fa-solid fa-bars menuIcon"></i>
+        </div>
+      </div>
+      <div class="toggleMenu">
+        <nav class="devCon">
+          <a href="" class="homeLink">
+            <p>Home</p>
+          </a>
+          <a href="" class="subjectsLink">
+            <p>Subjects</p>
+          </a>
+          <a href="" class="roomsLink">
+            <p>Rooms</p>
+          </a>
+          <a href="" class="instructorsLink">
+            <p>Instructors</p>
+          </a>
+          <div class="socials">
+            <p>You can connect with me on these platforms:</p>
+            <div class="socialBtns">
+              <a href="https://www.facebook.com/bosscleo3233">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.youtube.com/@CodeBuddySolutions">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="https://github.com/CodeBuddySLTNS"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <aside class="sideBarContainer">
+      <nav class="sideBarLinks">
+        <a href="" class="homeLink">
+          <p><i class="fa-solid fa-home"></i>Home</p>
+        </a>
+        <a href="" class="subjectsLink">
+          <p><i class="fa-solid fa-book"></i>Subjects</p>
+        </a>
+        <a href="" class="roomsLink">
+          <p><i class="fa-solid fa-building-columns"></i>Rooms</p>
+        </a>
+        <a href="" class="instructorsLink">
+          <p><i class="fa-solid fa-user-tie"></i>Instructors</p>
+        </a>
+        <!--       
+<div class="socials">
+  <p>You can connect with me on these platforms: </p>
+  <div class="socialBtns">
+    <a href="https://www.facebook.com/bosscleo3233">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/@CodeBuddySolutions">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://github.com/CodeBuddySLTNS"><i class="fa-brands fa-github"></i></a>
+  </div>
+</div>
+ -->
+      </nav>
+    </aside>
+
+    <div class="container addSchedCont">
+      <h1 class="title">Subject Scheduling System</h1>
+      <h3 class="h3LabelName">Department</h3>
+      <div class="scheduleContainer">
+        <table class="table">
+          <thead>
+            <tr class="tableHead">
+              <th>Subject</th>
+              <th>Time</th>
+              <th>Room</th>
+              <th>Day</th>
+              <th>Instructor</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="contents">
+            <!--         
+  <tr>
+    <td>Math</td>
+    <td>7:00 - 8:00 AM</td>
+    <td>4</td>
+    <td>Vincent Mark Jutba</td>
+  </tr>
+  <tr>
+    <td>English</td>
+    <td>9:00 - 10:00 AM</td>
+    <td>6</td>
+    <td>Ramiejeanne Calibo</td>
+  </tr>
+   -->
+          </tbody>
+        </table>
+        <p
+          class="nodata"
+          style="width: 100%; text-align: center; padding: 0.7rem 0 0"
+        >
+          No data to show.
+        </p>
+      </div>
+
+      <div class="addSubjectContainer">
+        <div class="addSubjectInputs">
+          <input
+            type="text"
+            placeholder="Subject name..."
+            class="addSubject"
+            list="subjects"
+            required
+          />
+
+          <datalist id="subjects"></datalist>
+
+          <div class="timeSlot">
+            <input
+              type="number"
+              placeholder="HH"
+              class="SHours"
+              max="12"
+              required
+            />
+            <span>:</span>
+            <input
+              type="number"
+              placeholder="MM"
+              class="SMinutes"
+              max="59"
+              required
+            />
+            <span> - </span>
+            <input
+              type="number"
+              placeholder="HH"
+              class="EHours"
+              max="12"
+              required
+            />
+            <span>:</span>
+            <input
+              type="number"
+              placeholder="MM"
+              class="EMinutes"
+              max="59"
+              required
+            />
+            <select class="option">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+
+          <details class="selectDay">
+            <summary>Select day...</summary>
+            <div class="days">
+              <label>
+                <input type="checkbox" value="Monday" />
+                Monday
+              </label>
+              <label>
+                <input type="checkbox" value="Tuesday" />
+                Tuesday
+              </label>
+              <label>
+                <input type="checkbox" value="Wednesday" />
+                Wednesday
+              </label>
+              <label>
+                <input type="checkbox" value="Thursday" />
+                Thursday
+              </label>
+              <label>
+                <input type="checkbox" value="Friday" />
+                Friday
+              </label>
+              <label>
+                <input type="checkbox" value="Saturday" />
+                Saturday
+              </label>
+              <label>
+                <input type="checkbox" value="Sunday" />
+                Sunday
+              </label>
+            </div>
+          </details>
+
+          <select id="rooms" class="room">
+            <option disabled selected value="">Select Room...</option>
+          </select>
+
+          <input
+            type="text"
+            placeholder="Instructor"
+            class="instructor"
+            list="instructors"
+            required
+          />
+
+          <datalist id="instructors"></datalist>
+        </div>
+        <p
+          class="fillout"
+          style="display: none; font-size: 0.95rem; padding: 3px 2px 0"
+        >
+          Please fill out all the field.
+        </p>
+        <div class="btns">
+          <button class="addButton">ADD</button>
+          <button onclick="ExportAsDoc()" class="saveButton">
+            EXPORT DOCUMENT
+          </button>
+        </div>
+      </div>
+
+      <div class="editSubjectContainer">
+        <form class="editSubjectForm">
+          <p>Edit Subject Schedule</p>
+          <div class="addSubjectInputs">
+            <input
+              type="text"
+              placeholder="Subject name..."
+              class="editSubject"
+              list="subjects"
+              required
+            />
+
+            <div class="timeSlot">
+              <input
+                type="number"
+                placeholder="HH"
+                class="editSHours"
+                max="12"
+                required
+              />
+              <span>:</span>
+              <input
+                type="number"
+                placeholder="MM"
+                class="editSMinutes"
+                max="59"
+                required
+              />
+              <span> - </span>
+              <input
+                type="number"
+                placeholder="HH"
+                class="editEHours"
+                max="12"
+                required
+              />
+              <span>:</span>
+              <input
+                type="number"
+                placeholder="MM"
+                class="editEMinutes"
+                max="59"
+                required
+              />
+              <select class="editOption">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+
+            <details class="selectDay">
+              <summary>Select day...</summary>
+              <div class="days">
+                <label>
+                  <input class="editDay" type="checkbox" value="Monday" />
+                  Monday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Tuesday" />
+                  Tuesday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Wednesday" />
+                  Wednesday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Thursday" />
+                  Thursday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Friday" />
+                  Friday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Saturday" />
+                  Saturday
+                </label>
+                <label>
+                  <input class="editDay" type="checkbox" value="Sunday" />
+                  Sunday
+                </label>
+              </div>
+            </details>
+
+            <select id="rooms" class="editRoom">
+              <option disabled selected value="">Select Room...</option>
+            </select>
+
+            <input
+              type="text"
+              placeholder="Instructor"
+              class="editInstructor"
+              list="instructors"
+              required
+            />
+          </div>
+          <p
+            class="fillout2"
+            style="display: none; font-size: 0.95rem; padding: 3px 2px 0"
+          >
+            Please fill out all the field.
+          </p>
+          <div class="btns">
+            <button type="button" class="cancelEditBtn">Cancel</button>
+            <button type="button" class="saveEditBtn">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="popupBoxContainer">
+        <div class="popupBox">
+          <p class="popupBoxInfo"></p>
+          <button class="popupButton">Okay</button>
+        </div>
+      </div>
+
+      <div class="popupBoxContainer2">
+        <div class="popupBox2">
+          <p class="popupBoxInfo2"></p>
+          <div class="btnss">
+            <button class="popupButton2 deleteLabel">Delete</button>
+            <button class="popupButton2 cancelDel" onclick="closePopup()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo"></div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

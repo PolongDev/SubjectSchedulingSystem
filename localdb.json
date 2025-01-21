@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    "Biblical Literature with Ministry of Healing",
+    "Computer Organization",
+    "Data Structures and Algorithms",
+    "Platform Technologies",
+    "Information Management",
+    "Technical Writing and Presentation Skills in IT",
+    "Integrative Programming and Technologies",
+    "Sports I ( Individual and Dual Sports )",
+    "Skills Development Program",
+    "Calculus"
+  ],
+  "rooms": [
+    { "name": "Room 1", "value": "1" },
+    { "name": "Room 2", "value": "2" },
+    { "name": "Room 3", "value": "3" },
+    { "name": "Room 4", "value": "4" },
+    { "name": "Room 5", "value": "5" },
+    { "name": "Room 6", "value": "6" },
+    { "name": "Computer Laboratory", "value": "ComLab" }
+  ],
+  "instructors": [
+    "Vincent Mark Jutba",
+    "Mikha Lim",
+    "Khaleed Top Global",
+    "Mang Kepwing"
+  ]
+}
